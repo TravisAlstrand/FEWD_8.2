@@ -1,0 +1,106 @@
+* {
+  /* NORMALIZE */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+
+  /* VARIABLES */
+  --clr-bg: rgb(244, 237, 228);
+  --card-bg: rgb(255, 250, 241);
+  --clr-brdr: rgb(222, 222, 222);
+}
+
+/* BASIC STYLES */
+
+body,
+header {
+  background-color: var(--clr-bg);
+}
+
+body {
+  position: relative;
+  padding: 0 2rem 2rem 2rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  height: 8vh;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 19rem);
+  grid-auto-rows: min-content;
+  justify-content: center;
+  gap: 1rem;
+  height: 90vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+/* EMPLOYEE CARDS */
+
+.card {
+  display: flex;
+  align-items: center;
+  height: 8rem;
+  width: 19rem;
+  padding: 1rem;
+  border: 1px solid var(--clr-brdr);
+  border-radius: 5px;
+  background-color: var(--card-bg);
+}
+
+.avatar {
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.email {
+  font-size: .7rem;
+}
+
+/* MODAL */
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .75);
+}
+
+.modal {
+  width: 375px;
+  margin: 15% auto auto;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    text-align: left;
+  }
+}
