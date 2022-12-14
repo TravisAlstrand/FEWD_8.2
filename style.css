@@ -9,7 +9,9 @@
 
   /* VARIABLES */
   --clr-bg: rgb(244, 237, 228);
+  --clr-shadow: rgb(243, 217, 185);
   --card-bg: rgb(255, 250, 241);
+  --card-bg-hover: rgb(243, 234, 217);
   --clr-brdr: rgb(222, 222, 222);
 }
 
@@ -56,6 +58,13 @@ h1 {
   border: 1px solid var(--clr-brdr);
   border-radius: 5px;
   background-color: var(--card-bg);
+  cursor: pointer;
+  transition: box-shadow .3s ease, background-color .3s ease;
+}
+
+.card:hover {
+  background-color: var(--card-bg-hover);
+  box-shadow: 7px 5px 10px var(--clr-shadow);
 }
 
 .avatar {
@@ -80,6 +89,13 @@ h1 {
 
 /* MODAL */
 
+.modal-close,
+.modal-avatar,
+.modal p,
+.modal h2 {
+  margin-bottom: .5rem;
+}
+
 .hidden {
   display: none;
 }
@@ -94,9 +110,31 @@ h1 {
 }
 
 .modal {
+  display: flex;
+  flex-direction: column;
   width: 375px;
   margin: 15% auto auto;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--card-bg);
   text-align: center;
+}
+
+.modal-close {
+  align-self: flex-end;
+  width: 2rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-avatar {
+  border-radius: 50%;
+}
+
+.cell {
+  margin-top: .5rem;
 }
 
 @media (min-width: 768px) {
