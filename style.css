@@ -24,12 +24,15 @@ header {
 
 body {
   position: relative;
-  padding: 0 2rem 2rem 2rem;
+  padding: 2rem;
 }
 
 header {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
   height: 8vh;
 }
 
@@ -45,6 +48,18 @@ main {
 h1 {
   text-align: center;
   font-size: 1.25rem;
+}
+
+input {
+  height: 2rem;
+  width: 19rem;
+  padding-inline: 1rem;
+  border: 1px solid var(--clr-brdr);
+  border-radius: 5px;
+}
+
+.no-results {
+  text-align: center;
 }
 
 /* EMPLOYEE CARDS */
@@ -96,6 +111,31 @@ h1 {
   margin-bottom: .5rem;
 }
 
+.modal-close,
+.prev-btn,
+.next-btn {
+  width: 2rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  border-radius: 40%;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  font-size: 1.25rem;
+}
+
+.modal-close:hover,
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: var(--card-bg-hover);
+}
+
 .hidden {
   display: none;
 }
@@ -110,6 +150,7 @@ h1 {
 }
 
 .modal {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 375px;
@@ -122,11 +163,6 @@ h1 {
 
 .modal-close {
   align-self: flex-end;
-  width: 2rem;
-  font-weight: 700;
-  background: none;
-  border: none;
-  cursor: pointer;
 }
 
 .modal-avatar {
@@ -137,7 +173,16 @@ h1 {
   margin-top: .5rem;
 }
 
+.next-btn {
+  right: 1rem;
+}
+
 @media (min-width: 768px) {
+
+  header {
+    flex-direction: row;
+  }
+
   h1 {
     text-align: left;
   }
